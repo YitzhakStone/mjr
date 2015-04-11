@@ -1,0 +1,120 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+.espacoTopo{
+	padding-top: 3%;
+}
+
+.menuLateral{
+	background: #F8F8F8;
+	height: 100%;
+	width: 15%;
+	position: fixed;
+	margin-left: -13px;
+}
+
+.menuDrop{
+	background: #FFFFFF;
+}
+
+.link-drop{
+	color: #333333;
+}
+
+
+.link-telas{
+	margin-top: 10px;
+	text-align: center;
+	margin-left: -17%;
+	border: 1px solid;
+	width: 130%;
+	color: #FFF;
+	font-family: 'SegoeUIBold';
+	background: #5BC0DE;
+	padding: 3%;
+	cursor: pointer;
+	z-index: 5;
+}
+.link-telas:hover{
+	color: #5BC0DE;
+	background: #FFF;
+}
+.menuLateral a{
+	text-decoration: none;
+}
+.conteudoPrincipal{
+	width: 85%;
+	margin-left: 15%;
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.marginLabel{
+	margin-top: 6%;
+}
+
+.tblRelatorios{
+	text-align: center;
+}
+
+.painelRelatorio{
+	padding-left: 15px;
+}
+
+.listaEventos{
+	margin-top: 5%;
+}
+
+.eventos{
+	margin: auto;
+	border: 2px solid #EEEEEE;
+	padding: 5px;
+	border-radius: 9px;
+	background: #1987FF;
+	color: #fff;
+}
+
+.eventosHorario{
+	float: right;
+	text-align: right;
+}
+
+.cadastro{
+	font-size: 29px;
+}
+
+.cadastroCampo{
+	padding: 5%;
+	border-radius: 1px solid #ccc;
+	
+}
+.navbar-brand{
+	color: #5BC0DE;
+}
+
+.dataEvento{
+	width: 150px;
+}
+
+.painelAnual{
+	padding: 10px;
+	border-left: 2px solid #FF9900;
+	background: #FFFFFF;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
