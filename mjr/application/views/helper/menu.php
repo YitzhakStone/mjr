@@ -10,16 +10,17 @@
 		<link href="<?php echo base_url("utils/css/bootstrap.css") ?>" rel="stylesheet">
 		<link href="<?php echo base_url("utils/css/style.css") ?>" rel="stylesheet">
 		<link href="<?php echo base_url("utils/css/jquery.datatables.css") ?>" rel="stylesheet">
-		<link href="<?php echo base_url("utils/fonts/stylesheet.css") ?>" rel="stylesheet">
-		
-		
+		<link href="<?php echo base_url("utils/fonts/stylesheet.css") ?>" rel="stylesheet">		
 		<link href="<?php echo base_url("utils/css/login.css") ?>" rel="stylesheet">
 
+
+		<link href="<?php echo base_url("utils/css/dataTables.tableTools.css") ?>" rel="stylesheet">
+
 		<script type="text/javascript" src="<?php echo base_url("utils/js/jquery.min.js") ?>"></script>
-		<script type="text/javascript" src="<?php echo base_url("utils/js/bootstrap.min.js") ?>"></script>
-		
+		<script type="text/javascript" src="<?php echo base_url("utils/js/bootstrap.min.js") ?>"></script>		
 		<script type="text/javascript" src="<?php echo base_url("utils/js/jquery-1.11.1.min.js") ?>"></script>
 	 	<script type="text/javascript" src="<?php echo base_url("utils/js/jquery.dataTables.min.js") ?>"></script>
+	 	<script type="text/javascript" src="<?php echo base_url("utils/js/dataTables.tableTools.js") ?>"></script>
 	 	
 	 	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	 	<script type="text/javascript" src="http://cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>  -->
