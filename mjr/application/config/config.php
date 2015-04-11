@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/mjr/';
+$config['base_url']	= 'http://localhost/mjr/mjr';
 
 /*
 |--------------------------------------------------------------------------
