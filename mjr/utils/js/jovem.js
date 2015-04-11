@@ -14,6 +14,7 @@ $(document).ready(function() {
 	modalExcluirJovem();
 	modalAlterarJovem();
 	
+	//inserir alterações para gerar PDF
 	tableEvento = $('#tblJovem').DataTable({
 		"aaSorting": [[1, "asc"]],
     	"oLanguage": {
