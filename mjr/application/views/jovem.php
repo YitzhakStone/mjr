@@ -172,6 +172,8 @@
 
 											<?php
 											
+											echo '<option title="" value=""></option>';
+
 											foreach ($result as $row) {
 												//echo '<option value="' . $row -> ID_Sede . '">' . $row -> Nome . '</option>';
 												echo '<option title="'.$row -> Nome_Sede.'" value="' . $row -> ID_Sede . '">' . $row -> Nome_Sede . '</option>';

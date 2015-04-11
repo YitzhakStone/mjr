@@ -41,7 +41,8 @@ class Jovem_model extends CI_Model {
 
 		$this->db->select('jovem.*,sede.Nome as Nome_Sede ,sede.ID_Sede');
 		$this->db->from(self::TABELA);
-		$this->db->join('sede', 'sede.ID_Sede = Jovem.ID_Sede');
+		$this->db->join('sede', 'sede.ID_Sede = Jovem.ID_Sede', 'left');
+		$this->db->where('jovem.FlgExcluido', '0');
 
 
 		$query = $this->db->get();
@@ -66,18 +67,23 @@ class Jovem_model extends CI_Model {
 	//Delete
 	function excluirJovem(Jovem_model $jovem){
 		if(!empty($jovem->idjovem)){
-			$excluir = $this->db->delete(self::TABELA, array('ID_Jovem' => $jovem->idjovem));
-			if($excluir)
+
+			$data = array(
+					'FlgExcluido' => 1
+			);
+
+			$this->db->where('ID_Jovem',$jovem->idjovem);
+			
+			if($this->db->update(self::TABELA, $data))
 				return true;
-			else 
-			return false;
+			else
+				return false;
+
 		}else{
 			return false;
-		}
-		
+		}			
+
 	}
-
-
 
 	//Update
 	function alterarJovem(Jovem_model $jovem){
