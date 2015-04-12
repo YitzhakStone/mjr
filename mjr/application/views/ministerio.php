@@ -10,7 +10,7 @@
 						<a href="#panel-843329" data-toggle="tab">Lista de Ministérios</a>
 					</li>
 					<li>
-						<a href="#panel-388194" data-toggle="tab">Falta implementar</a>
+						<a href="#panel-388194" data-toggle="tab">Jovens do Ministério</a>
 					</li>
 				</ul>
 				<div class="tab-content">
@@ -151,15 +151,27 @@
 		
 					</div>
 					<div class="tab-pane" id="panel-388194">
+						
+						<label>Ministério:</label>
+						<select id="filtroJovensMinist" onload="fill_filtroJovensMinist()">
+							<option value=""></option>
+						    <option value="1">Guaxinim</option>
+						    <option value="2">Velociraptor</option>
+						    <option value="3">Tutankamon-NotWork</option>
+						    <option value="4">Teste-NotWork</option>
+						</select>
+
+<!--	<button onclick="teste()">TESTE</button>	-->
+
+
 						<br />
-						<table id="tblContatoLideres" class="display" width="100%" cellspacing="0">
+						<br />
+						<table id="tblJovensMinisterio" class="display" width="100%" cellspacing="0">
 							<thead>
 								<tr>
-									<th>Igreja</th>
-									<th>Lider</th>
-									<th>Telefone</th>
-									<th>Celular</th>
-									<th>Email</th>
+									<th>ID_Ministério</th>
+									<th>Ministério</th>
+									<th>Jovem</th>
 								</tr>
 							</thead>
 							<tbody></tbody>

@@ -17,9 +17,9 @@ class Ministerio extends CI_Controller {
 	
 	public function index()
 	{
-		$jovens['jovens'] = $this->listar_jovens();
+		$data['jovens'] = $this->listar_jovens();
 		$this->load->view('helper/menu', $this->sessaoUsuario);
-		$this->load->view('ministerio', $jovens);
+		$this->load->view('ministerio', $data);
 	}
 
 	function listar_jovens(){
@@ -33,6 +33,18 @@ class Ministerio extends CI_Controller {
 	function listar_ministerios(){
 		$this -> load -> model('ministerio_model');
 		$ministerios = $this->ministerio_model->listarMinisterios();
+		
+		$ministerioArray = array();
+		
+		foreach ($ministerios as $ministerio){
+			array_push($ministerioArray, $ministerio);
+		}
+		echo json_encode(array("data" => $ministerioArray));
+	}
+
+	function listar_jovens_ministerios($idMinist){
+		$this -> load -> model('ministerio_model');
+		$ministerios = $this->ministerio_model->listarJovensMinisterios($idMinist);
 		
 		$ministerioArray = array();
 		

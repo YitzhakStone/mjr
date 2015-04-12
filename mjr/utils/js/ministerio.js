@@ -45,38 +45,14 @@ $(document).ready(function() {
         ],
     	"columns" : [{"data" : "ID_Minist"}, {"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"},{"data" : "Email"}]
     });
+
+    $("#filtroJovensMinist").change(function() {
+    	var idMinist = $( "#filtroJovensMinist option:selected" ).val();
+    	tableLideres.destroy();
+	 	preencherTableJovensMinist(idMinist);
+	});
     
-    
-    tableLideres = $('#tblContatoLideres').DataTable({
-    	"oLanguage": {
-	        "sEmptyTable": "Nenhum registro encontrado.",
-	        "sInfo": "_TOTAL_ registros",
-	        "sInfoEmpty": "0 Registros",
-	        "sInfoFiltered": "(De _MAX_ registros)",
-	        "sInfoPostFix":    "",
-	        "sInfoThousands":  ".",
-	        "sLengthMenu": "Mostrar _MENU_ registros por pagina",
-	        "sLoadingRecords": "Carregando...",
-	        "sProcessing":     "Processando...",
-	        "sZeroRecords": "Nenhum registro encontrado.",
-	        "sSearch": "Pesquisar",
-	        "oPaginate": {
-	            "sNext": "Proximo",
-	            "sPrevious": "Anterior",
-	            "sFirst": "Primeiro",
-	            "sLast":"Ultimo"
-	           }
-	        },
-    	"ajax" : "ministerio/listar_ministerios",
-    	 "columnDefs": [
-    	 {
-            "targets": 4,
-            "data": null,
-        }
-        ],
-    	"columns" : [{"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
-    });
-    
+    preencherTableJovensMinist(0);
     
     $("#nmevento option").click(function(){
     	var nomeEvento = $("#nmevento option:selected").val();
@@ -107,9 +83,64 @@ $(document).ready(function() {
     	
     });
     
+
+
 });
 
 
+function preencherTableJovensMinist(idMinist){
+	//var idMinist = 1;
+	tableLideres = $('#tblJovensMinisterio').DataTable({
+    	"oLanguage": {
+	        "sEmptyTable": "Nenhum registro encontrado.",
+	        "sInfo": "_TOTAL_ registros",
+	        "sInfoEmpty": "0 Registros",
+	        "sInfoFiltered": "(De _MAX_ registros)",
+	        "sInfoPostFix":    "",
+	        "sInfoThousands":  ".",
+	        "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+	        "sLoadingRecords": "Carregando...",
+	        "sProcessing":     "Processando...",
+	        "sZeroRecords": "Nenhum registro encontrado.",
+	        "sSearch": "Pesquisar",
+	        "oPaginate": {
+	            "sNext": "Proximo",
+	            "sPrevious": "Anterior",
+	            "sFirst": "Primeiro",
+	            "sLast":"Ultimo"
+	           }
+	        },
+    	"ajax" : "ministerio/listar_jovens_ministerios/" + idMinist,
+    	 "columnDefs": [
+    	 {
+            "targets": 2,
+            "data": null,
+        }
+        ],
+    	//"columns" : [{"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
+    	"columns" : [ {"data" : "ID_Minist"}, {"data" : "Minist_Nome"}, {"data" : "Jovem_Nome"}]
+    });
+}
+
+$(document).ready(function() {
+	$.ajax({
+		url: "ministerio/listar_ministerios",
+		context: document.body,
+		type: "GET",
+		success: function(data){
+			$('#filtroJovensMinist').empty();
+			$('#filtroJovensMinist').append('<option value="0"></option>');
+			// Parse the returned json data
+            var opts = $.parseJSON(data);
+            // Use jQuery's each to iterate over the opts value
+            $.each(opts, function() {
+	            $.each(this, function(i, d) {
+	                $('#filtroJovensMinist').append('<option value="' + d.ID_Minist + '">' + d.Nome + '</option>');
+	            });
+            });
+		}
+	});
+});
 
 function modalExcluirMinisterio(){
 	$("#tblMinisterios tbody").on("click", ".btn-excluir", function () {
