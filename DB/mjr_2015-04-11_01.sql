@@ -225,6 +225,28 @@ INSERT INTO `ministerio` (`ID_Minist`, `Nome`, `ID_Lider`) VALUES
 
 -- --------------------------------------------------------
 
+CREATE TABLE IF NOT EXISTS `jovemministerio` (
+  `ID_Jovem` int(10) unsigned NOT NULL,
+  `ID_Minist` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`ID_Jovem`,`ID_Minist`),
+  KEY `ID_Minist` (`ID_Minist`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+ALTER TABLE `jovemministerio`
+  ADD CONSTRAINT `jovemministerio_ibfk_1` FOREIGN KEY (`ID_Jovem`) REFERENCES `jovem` (`ID_Jovem`),
+  ADD CONSTRAINT `jovemministerio_ibfk_2` FOREIGN KEY (`ID_Minist`) REFERENCES `ministerio` (`ID_Minist`);
+
+
+insert into jovemministerio values (1,2);
+insert into jovemministerio values (2,1);
+insert into jovemministerio values (3,1);
+insert into jovemministerio values (3,2);
+insert into jovemministerio values (4,1);
+insert into jovemministerio values (5,2);
+insert into jovemministerio values (6,2);
+
 --
 -- Estrutura da tabela `sede`
 --
