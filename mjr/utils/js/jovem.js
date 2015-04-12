@@ -13,9 +13,105 @@ $(document).ready(function() {
 
 	modalExcluirJovem();
 	modalAlterarJovem();
-	
-	//inserir alterações para gerar PDF
 	tableEvento = $('#tblJovem').DataTable({
+		//botões para impressão e exportação
+		dom: 'T<"clear">lfrtip',
+        
+        tableTools: {
+            "sSwfPath": "./utils/swf/copy_csv_xls_pdf.swf",
+            "aButtons": [
+
+				{
+                    "sExtends":    "collection",//grupo copia
+                    "sButtonText": "Copiar",
+                    "aButtons":    [ 	{
+											"sExtends": "copy",
+											"sButtonText": "Copiar Selecionados",
+											"mColumns": [1,2,3,4,5,6,7,8],
+											"oSelectorOpts":{
+											                	page: 'current'
+							            					},
+                						} ,
+
+                						{
+						                    "sExtends": "copy",
+						                    "sButtonText": "Copiar Todos",
+						                    "mColumns": [1,2,3,4,5,6,7,8],
+						                },
+                					]
+                },
+
+               	//grupo impressão
+                {
+                    "sExtends":    "collection",
+                    "sButtonText": "Imprimir",
+                    "aButtons":    [ 	{
+											"sExtends": "print",
+											"sButtonText": "Imprimir Selecionados",
+											"sInfo": "Pagina para impressão Gerada! Aperte Esc para voltar",
+											"mColumns": [1,2,3,4,5,6,7,8],
+											"oSelectorOpts":{
+											                	page: 'current'
+							            					},
+                						} ,
+
+                						{
+						                    "sExtends": "print",
+						                    "sButtonText": "Imprimir Todos",
+						                    "sInfo": "Pagina para impressão Gerada! Aperte Esc para voltar",
+						                    "mColumns": [1,2,3,4,5,6,7,8],
+						                },
+                					]
+                },
+
+                //grupo PDF
+                 {
+                    "sExtends":    "collection",
+                    "sButtonText": "Exportar PDF",
+                    "aButtons":    [ 	
+                    				
+												{
+													"sExtends": "pdf",
+													"sButtonText": "Exportar Selecionados - Dados Simples",
+													"mColumns": [1,2,3,4,5,6],
+													"oSelectorOpts":{
+											                		page: 'current'
+							            							},
+							            			"sPdfOrientation": "landscape"
+												},
+												{
+													"sExtends": "pdf",
+													"sButtonText": "Exportar Selecionados - Dados Completos",
+													"mColumns": [1,2,3,4,5,6,7,8],
+													"oSelectorOpts":{
+											                		page: 'current'
+							            							},
+							            			"sPdfOrientation": "landscape"
+												},
+
+
+												{
+													"sExtends": "pdf",
+													"sButtonText": "Exportar Todos -Dados Simples",
+													"mColumns": [1,2,3,4,5,6],
+							            			"sPdfOrientation": "landscape"
+												},
+												{
+													"sExtends": "pdf",
+													"sButtonText": "Exportar Todos -Dados Completos",
+													"mColumns": [1,2,3,4,5,6,7,8],
+							            			"sPdfOrientation": "landscape"
+												},
+
+
+											
+                					]
+                },
+
+
+            ]
+        },
+        //fim botões exportação e impressão
 		"aaSorting": [[1, "asc"]],
     	"oLanguage": {
 	        "sEmptyTable": "Nenhum registro encontrado.",
