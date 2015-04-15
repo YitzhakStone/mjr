@@ -5,9 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>MJR - Cadastro de Jovens</title>
-		<link rel="icon" href="<?php echo base_url("utils/img/icone.jpg") ?>" type="image/jpg">
-
+		<title>MJRBH - Cadastro de Jovens</title>
+		<link rel="icon" href="<?php echo base_url("utils/img/icone.png") ?>" type="image/png">
 		<link href="<?php echo base_url("utils/css/bootstrap.css") ?>" rel="stylesheet">
 		<link href="<?php echo base_url("utils/css/style.css") ?>" rel="stylesheet">
 		<link href="<?php echo base_url("utils/css/jquery.datatables.css") ?>" rel="stylesheet">

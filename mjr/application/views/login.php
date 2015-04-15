@@ -7,8 +7,8 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>MRJBH - Cadastro de Jovens</title>
-
+		<title>MRJBH - Cadastro de Jovens - Login</title>
+		<link rel="icon" href="<?php echo base_url("utils/img/key.png") ?>" type="image/png">
 		<link href="<?php echo base_url("utils/css/bootstrap.min.css") ?>" rel="stylesheet">
 		<link href="<?php echo base_url("utils/css/style.css") ?>" rel="stylesheet">
 		
