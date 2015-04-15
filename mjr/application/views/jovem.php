@@ -241,8 +241,9 @@
 				</div>
 			</form>
 		</div>
+	</div>
 
-<!-- Ainda não funfa, quando clica pra abir desativa tudo mais ele não aparece -->
+
 		<div class="modal fade" id="cadastrarMinisterio" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<form method="post" action="">
 				<div class="modal-dialog">
