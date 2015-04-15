@@ -145,7 +145,7 @@ $(document).ready(function() {
             "defaultContent": "<a href='#alterarJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-alterar'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-trash'></i></a>"
         }
         ],
-    	"columns" : [{"data" : "ID_Jovem"}, {"data" : "Nome"}, {"data" : "Endereco"}, {"data" : "Telefone"}, {"data" : "Celular"} , {"data" : "Email"} , {"data" : "DatNasc"} , {"data" : "NomePai"} , {"data" : "NomeMae"}]
+    	"columns" : [{"data" : "ID_Jovem"}, {"data" : "Nome"}, {"data" : "Endereco"}, {"data" : "Telefone"}, {"data" : "Celular"} , {"data" : "Email"} , {"data" : "DatNasc"} ,  {"data" : "NomeMae"}, {"data" : "NomePai"}]
     });
     
     $("#btnAddCategoria").click(function(){
