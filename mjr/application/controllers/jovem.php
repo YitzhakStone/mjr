@@ -17,8 +17,10 @@ class Jovem extends CI_Controller {
 	//TESTE OK 
 	public function index() {
 		$result['result'] = $this -> listar_igrejas();
+		$result['listaMinisterios'] = $this -> listar_ministerios();
 		$this->load->view('helper/menu', $this->sessaoUsuario);
 		$this -> load -> view('jovem', $result);
+		
 	}
 	
 	//Lista igrejas para o select de cadastro de jovens
@@ -28,6 +30,14 @@ class Jovem extends CI_Controller {
 		$this -> load -> model('sede_model');
 		$igrejas = $this->sede_model->listarSedesID();
 		return $igrejas;
+	}
+
+	//
+	function listar_ministerios()
+	{
+		$this -> load -> model('ministerio_model');
+		$ministerios = $this->ministerio_model->listarMinisteriosSimples();
+		return $ministerios;
 	}
 	
 	//Obtem a lista dos jovens para enviar a Tabel

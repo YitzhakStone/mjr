@@ -41,7 +41,7 @@
 											<?php
 											
 											foreach ($result as $row) {
-												echo '<option value="' . $row -> ID_Sede . '">' . $row -> Nome_Sede . '</option>';
+												echo '<option value="' . $row -> ID_Sede. '">' . $row -> Nome_Sede. '</option>';
 											}
 											?>
 										
@@ -152,6 +152,43 @@
 			</form>
 		</div>
 		
+		<div class="modal fade" id="cadastrarMinisterio" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<form method="post" action="">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title" id="myModalLabel">
+								Inserir em ministério
+							</h4>
+						</div>
+						<div class="modal-body">
+							Selecione o Ministério						    
+						</div>
+						<div class="modal-body">
+										<select id="idminist" name="idminist">
+
+											<?php
+											//aqui mudar para lista os ministerios
+
+											foreach ($listaMinisterios as $row) {
+												echo '<option value="' . $row -> ID_Minist . '">' . $row -> Nome . '</option>';
+											}
+											?>
+										
+										</div>
+									</select>
+						<div class="modal-footer">
+							 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button> 
+							 <input type="submit" class="btn btn-primary" value="Cadastrar" />
+						</div>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+
+		cadastrarMinisterio
 		<div class="modal fade" id="alterarJovem" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<form method="post" action="jovem/alterarJovem">
 			<input type="hidden" name="ID_Jovem" class="spanIdEvento" />

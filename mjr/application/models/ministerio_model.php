@@ -24,6 +24,14 @@ class Ministerio_model extends CI_Model {
 		return $query->result();
 	}
 
+	function listarMinisteriosSimples(){
+		$this->db->select('*');
+		$this->db->from(self::TABELA);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+
 	function listarJovensMinisterios($idMinist){
 		//$this->db->select('ministerio.*,Jovem.Nome as Jovem_Nome,Jovem.Telefone,Jovem.Celular,Jovem.Email');
 		$this->db->select('ministerio.ID_Minist, ministerio.nome as Minist_Nome, Jovem.Nome as Jovem_Nome');
