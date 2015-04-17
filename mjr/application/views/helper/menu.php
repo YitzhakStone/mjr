@@ -91,11 +91,8 @@
 							Ministérios
 						</div>
 					</a>		
-					<a href="">
-						<div class="link-telas">
-						</div>
-					</a>
-					<a href="eventos">
+
+					<!-- <a href="eventos">
 						<div class="link-telas">
 							Eventos - Desativar
 						</div>
@@ -112,6 +109,6 @@
 							Relatórios - Desativar
 						</div>
 					</a>
-					
+					 -->
 				</div>
 			</div>
