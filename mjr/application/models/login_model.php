@@ -18,7 +18,7 @@ class Login_model extends CI_Model{
 	 * 
 	 * Teste = OK
 	 */
-  	function verifica_login($login, $senha){
+  	function verifica_login($login){
   		
   		if ($query = $this->db->get_where(self::TABELA, array('login' => $login->login , 'dssenha' => $login->senha))) {
   			if($query->num_rows() > 0){
