@@ -22,7 +22,7 @@ class Sede_model extends CI_Model {
 	//select 
 	function listarSedes(){
 		//$query = $this->db->get(self::TABELA);
-		$this->db->select('sede.*,Jovem.Nome as Jovem_Nome,Jovem.Telefone,Jovem.Celular,Jovem.Email');
+		$this->db->select('sede.*,jovem.Nome as Jovem_Nome,jovem.Telefone,jovem.Celular,jovem.Email');
 		$this->db->from(self::TABELA); 
 		$this->db->join('jovem', 'sede.ID_Lider = jovem.ID_Jovem');
 		$query = $this->db->get();
