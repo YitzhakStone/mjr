@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "painel";
+$route['default_controller'] = "jovem";
 $route['404_override'] = '';
 
 

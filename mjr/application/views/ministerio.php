@@ -63,6 +63,7 @@
 			</div>
 		</div>
 	</div>
+
 	<table id="tblMinisterios" class="display" width="100%" cellspacing="0">
 		<thead>
 			<tr>
@@ -78,6 +79,8 @@
 		</thead>
 		<tbody></tbody>
 	</table>
+
+
 
 	<div class="modal fade" id="excluirMinisterio" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<form method="post" action="ministerio/excluir_ministerio">
@@ -105,6 +108,9 @@
 			</div>
 		</form>
 	</div>
+
+
+
 
 	<div class="modal fade" id="alteraMinisterio" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<form method="post" action="ministerio/alterarministerio">
@@ -148,6 +154,7 @@
 		</form>
 	</div>
 
+	
 		
 					</div>
 					<div class="tab-pane" id="panel-388194">
@@ -172,6 +179,10 @@
 									<th>ID_Ministério</th>
 									<th>Ministério</th>
 									<th>Jovem</th>
+									<th>Telefone</th>
+									<th>Celular</th>
+									<th>Email</th>
+									<th>Ação</th>
 								</tr>
 							</thead>
 							<tbody></tbody>
@@ -183,6 +194,35 @@
 		<br />
 		<br />
 		<br />
+	</div>
+
+	<div class="modal fade" id="excluirVinculo" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<form method="post" action="">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							×
+						</button>
+						<h4 class="modal-title" id="myModalLabel"> Remover Vínculo </h4>
+					</div>
+					<div class="modal-body">
+						Tem certeza que quer excluir o vinculo <span class="spanNomeMinisterioExcluir"></span> -
+						<span class="spanNomeJovemExcluir"></span>
+						<input type="hidden" id="spanIDMinisterioExcluir" name="idministerioV" />
+						<input type="hidden" id="spanIDJovemExcluir" name="idJovemV" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Cancelar
+						</button>
+						<button type="submit" class="btn btn-primary">
+							Excluir
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 	
 <script type="text/javascript" src="<?php echo base_url("utils/js/jquery.maskedinput.js") ?>"></script>

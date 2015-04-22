@@ -6,6 +6,8 @@ $(document).ready(function() {
 	modalExcluirMinisterio();
 	modalAlterarMinisterio();
 	modalEfetuarCompra();
+	modalremoverVinculo();
+
 	
 	$(".respostaAjax").hide();
 	
@@ -50,6 +52,7 @@ $(document).ready(function() {
     	var idMinist = $( "#filtroJovensMinist option:selected" ).val();
     	tableLideres.destroy();
 	 	preencherTableJovensMinist(idMinist);
+
 	});
     
     preencherTableJovensMinist(0);
@@ -113,12 +116,18 @@ function preencherTableJovensMinist(idMinist){
     	"ajax" : "ministerio/listar_jovens_ministerios/" + idMinist,
     	 "columnDefs": [
     	 {
-            "targets": 2,
+                "targets": [ 0 ],
+                "visible": false,
+                "searchable": false
+         },
+    	 {
+            "targets": 6,
             "data": null,
+            "defaultContent": "</a> <a href='#excluirVinculo' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir' title ='Remover Vinculo'><i class='glyphicon glyphicon-remove'></i></a>"
         }
         ],
     	//"columns" : [{"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
-    	"columns" : [ {"data" : "ID_Minist"}, {"data" : "Minist_Nome"}, {"data" : "Jovem_Nome"}]
+    	"columns" : [ {"data" : "ID_Minist"}, {"data" : "Nome"}, {"data" : "Jovem_Nome"},{"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
     });
 }
 
@@ -142,11 +151,24 @@ $(document).ready(function() {
 	});
 });
 
+//não funciona, os dados da variavel data não aparecem
 function modalExcluirMinisterio(){
 	$("#tblMinisterios tbody").on("click", ".btn-excluir", function () {
 		var data = table.row( $(this).parents('tr') ).data();
 		$(".spanNomeMinisterio").html(data["Nome"]);
 		$("#spanIDMinisterio").val(data["ID_Minist"]);
+	 });
+}
+
+function modalremoverVinculo(){
+	$("#tblJovensMinisterio tbody").on("click", ".btn-excluir", function () {
+		var data = table.row( $(this).parents('tr') ).data();
+		alert(dataV["Nome"]);		
+		$(".spanNomeMinisterioExcluir").html(data["NomeV"]);		
+		$("#spanIDMinisterioExcluir").val(data["ID_MinistV"]);	
+		$(".spanNomeJovemExcluir").html(data["Jovem_Nome"]);
+		$("#spanIDJovemExcluir").val(data["ID_Jovem"]);
+		
 	 });
 }
 
