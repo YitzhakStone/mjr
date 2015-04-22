@@ -1,7 +1,7 @@
 </div>
 <div class="col-lg-10  espacoTopo conteudoPrincipal">
 		<div class="col-md-12 column">
-			<h3> Ministérios</h3>
+			<h3><span class="glyphicon glyphicon-music"></span> Ministérios</h3>
 			<hr />
 	
 			<div class="tabbable" id="tabs-815921">
@@ -188,12 +188,15 @@
 							<tbody></tbody>
 						</table>
 					</div>
-				</div>
+	</div>
 			</div>
 		</div>
 		<br />
 		<br />
 		<br />
+
+			
+
 	</div>
 
 	<div class="modal fade" id="excluirVinculo" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -224,6 +227,9 @@
 			</div>
 		</form>
 	</div>
+
+</div>
+
 	
 <script type="text/javascript" src="<?php echo base_url("utils/js/jquery.maskedinput.js") ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("utils/js/ministerio.js") ?>"></script>

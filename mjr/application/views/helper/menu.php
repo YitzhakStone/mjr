@@ -44,7 +44,7 @@
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
 								<li class="marginLabel">
-									<div class="label label-info">Seja Bem-vindo <?php echo $nmusuario ?></div>
+									<div class="label label-info"><span class="glyphicon glyphicon-user"></span> Seja Bem-vindo <?php echo $nmusuario ?></div>
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Opções <strong class="caret"></strong></a>
@@ -53,14 +53,14 @@
 										if($perfil == "admin"){
 											echo 	'
 													<li>
-														<a href="usuario">Cadastrar Usuário</a>
+														<a href="usuario"><span class="glyphicon glyphicon-plus-sign"></span> Cadastrar Usuário</a>
 													</li>
 													';
 										}
 										?>
 										<li class="divider"></li>
 										<li>
-											<a href="login/sair">Sair</a>
+											<a href="login/sair"><span class="glyphicon glyphicon-log-out"></span> Sair</a>
 										</li>
 									</ul>
 								</li>
@@ -78,17 +78,17 @@
 
 					<a href="jovem">
 						<div class="link-telas">
-							Jovens
+							<span class="glyphicon glyphicon-user"></span> Jovens
 						</div>
 					</a>
 					<a href="sede">
-						<div class="link-telas">
-							Igrejas
+						<div class="link-telas">							  
+							<span class="glyphicon glyphicon-home"></span> Igrejas
 						</div>
 					</a>
 					<a href="ministerio">
 						<div class="link-telas">
-							Ministérios
+							<span class="glyphicon glyphicon-music"></span> Ministérios
 						</div>
 					</a>		
 

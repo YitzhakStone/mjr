@@ -36,7 +36,7 @@
 			<div class="col-lg-4 login-container">
 				<form id="formLogin" action="login/verificaLogin" method="post"class="form-signin" role="form">
 					<div id="erroVazio" class="alert alert-warning">
-						*Todos os campos são obrigatórios
+						<span class="glyphicon glyphicon-ban-circle"></span> Todos os campos são obrigatórios
 					</div>
 					<br />	
 					<img src="<?php echo base_url('utils/img/mjrfundo.png'); ?>" />

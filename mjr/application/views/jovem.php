@@ -9,7 +9,7 @@
 </script>
 			<div class="col-lg-10  espacoTopo conteudoPrincipal">
 				<h3>
-					Jovens
+					<span class="glyphicon glyphicon-user"></span> Jovens
 				</h3>
 				<hr />
 				<a id="modal-170030" href="#addEvento" role="button" class="btn btn-success" data-toggle="modal">Adicionar Jovem</a>

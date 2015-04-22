@@ -1,7 +1,7 @@
 </div>
 <div class="col-lg-10  espacoTopo conteudoPrincipal">
 		<div class="col-md-12 column">
-			<h3> Igrejas</h3>
+			<h3> <span class="glyphicon glyphicon-home"></span> Igrejas</h3>
 			<hr />
 	
 			<div class="tabbable" id="tabs-815921">

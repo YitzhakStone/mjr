@@ -123,7 +123,8 @@ function preencherTableJovensMinist(idMinist){
     	 {
             "targets": 6,
             "data": null,
-            "defaultContent": "</a> <a href='#excluirVinculo' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir' title ='Remover Vinculo'><i class='glyphicon glyphicon-remove'></i></a>"
+            "defaultContent": "<a href='#excluirVinculo' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-remove'></i></a>"
+            
         }
         ],
     	//"columns" : [{"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
@@ -161,10 +162,10 @@ function modalExcluirMinisterio(){
 }
 
 function modalremoverVinculo(){
-	$("#tblJovensMinisterio tbody").on("click", ".btn-excluir", function () {
+	$("#tblJovensdesvincular tbody").on("click", ".btn-excluir", function () {
 		var data = table.row( $(this).parents('tr') ).data();
 		alert(dataV["Nome"]);		
-		$(".spanNomeMinisterioExcluir").html(data["NomeV"]);		
+		$(".spanNomeMinisterioExcluir").html(data["Nome"]);		
 		$("#spanIDMinisterioExcluir").val(data["ID_MinistV"]);	
 		$(".spanNomeJovemExcluir").html(data["Jovem_Nome"]);
 		$("#spanIDJovemExcluir").val(data["ID_Jovem"]);
@@ -192,4 +193,5 @@ function modalEfetuarCompra(){
 		var data = table.row( $(this).parents('tr') ).data();
 		$(".idClienteFk").val(data["idcliente"]);
 	 });
+
 }
