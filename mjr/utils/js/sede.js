@@ -41,7 +41,7 @@ $(document).ready(function() {
     	 {
             "targets": 5,
             "data": null,
-            "defaultContent": "<a href='#alterarSede' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-alterar'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirSede' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-trash'></i></a>"
+            "defaultContent": "<a href='#alterarSede' title='Alterar Igreja' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-alterar'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirSede' title='Apagar Igreja' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-trash'></i></a>"
         }
         ],
     	"columns" : [{"data" : "ID_Sede"}, {"data" : "Nome"}, {"data" : "Endereco"},{"data" : "Jovem_Nome"},{"data" : "Obs"}]

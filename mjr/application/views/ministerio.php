@@ -200,7 +200,7 @@
 	</div>
 
 	<div class="modal fade" id="excluirVinculo" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<form method="post" action="">
+		<form method="post" action="ministerio/removerDoMinisterio">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -210,8 +210,8 @@
 						<h4 class="modal-title" id="myModalLabel"> Remover Vínculo </h4>
 					</div>
 					<div class="modal-body">
-						Tem certeza que quer excluir o vinculo <span class="spanNomeMinisterioExcluir"></span> -
-						<span class="spanNomeJovemExcluir"></span>
+						Tem certeza que quer remover o jovem <span class="spanNomeJovemExcluir"></span> do ministério <span class="spanNomeMinisterioExcluir"></span> ?
+						
 						<input type="hidden" id="spanIDMinisterioExcluir" name="idministerioV" />
 						<input type="hidden" id="spanIDJovemExcluir" name="idJovemV" />
 					</div>

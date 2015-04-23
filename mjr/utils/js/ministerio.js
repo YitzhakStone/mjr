@@ -42,7 +42,7 @@ $(document).ready(function() {
     	 {
             "targets": 6,
             "data": null,
-            "defaultContent": "<a href='#alteraMinisterio' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-alterar'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirMinisterio' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-trash'></i></a>"
+            "defaultContent": "<a href='#alteraMinisterio' title='Alterar Ministério' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-alterar'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirMinisterio' title='Apagar Ministério' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-trash'></i></a>"
         }
         ],
     	"columns" : [{"data" : "ID_Minist"}, {"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"},{"data" : "Email"}]
@@ -123,7 +123,7 @@ function preencherTableJovensMinist(idMinist){
     	 {
             "targets": 6,
             "data": null,
-            "defaultContent": "<a href='#excluirVinculo' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-remove'></i></a>"
+            "defaultContent": "<a href='#excluirVinculo' title='Remover do Ministério' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-remove'></i></a>"
             
         }
         ],
@@ -152,7 +152,7 @@ $(document).ready(function() {
 	});
 });
 
-//não funciona, os dados da variavel data não aparecem
+
 function modalExcluirMinisterio(){
 	$("#tblMinisterios tbody").on("click", ".btn-excluir", function () {
 		var data = table.row( $(this).parents('tr') ).data();
@@ -161,12 +161,13 @@ function modalExcluirMinisterio(){
 	 });
 }
 
+//funciounouuuuuuuuuuuuuuuuuuuuuuuuuuuuu!!!!!!!!!!!!!!!!
 function modalremoverVinculo(){
-	$("#tblJovensdesvincular tbody").on("click", ".btn-excluir", function () {
-		var data = table.row( $(this).parents('tr') ).data();
-		alert(dataV["Nome"]);		
+	$("#tblJovensMinisterio tbody").on("click", ".btn-excluir", function () {
+		var data = tableLideres.row( $(this).parents('tr') ).data();
+		//alert(data["Nome"]);		
 		$(".spanNomeMinisterioExcluir").html(data["Nome"]);		
-		$("#spanIDMinisterioExcluir").val(data["ID_MinistV"]);	
+		$("#spanIDMinisterioExcluir").val(data["ID_Minist"]);	
 		$(".spanNomeJovemExcluir").html(data["Jovem_Nome"]);
 		$("#spanIDJovemExcluir").val(data["ID_Jovem"]);
 		

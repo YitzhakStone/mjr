@@ -2,6 +2,8 @@
 class Ministerio_model extends CI_Model {
 
 	const TABELA = 'ministerio';
+	const TABELAV = 'jovemministerio';
+					
 	
 	var $idMinisterio;
 	var $nomeMinisterio;
@@ -98,6 +100,21 @@ class Ministerio_model extends CI_Model {
 		}else{
 			return false;
 		}
+	}
+
+	function removerdoMinisterio($idministerio,$idjovem){
+		if(!empty($idministerio) && !empty($idjovem)){
+			$excluir = $this->db->delete(self::TABELAV, array('ID_Minist' => $idministerio,'ID_Jovem' => $idjovem));
+			if($excluir)
+				return true;
+			else
+				return false;
+
+		}
+		else{
+			return false;
+		}
+
 	}
 }
 ?>
