@@ -42,6 +42,7 @@ class Jovem_model extends CI_Model {
 		$this->db->select('jovem.*,sede.Nome as Nome_Sede ,sede.ID_Sede');
 		$this->db->from(self::TABELA);
 		$this->db->join('sede', 'sede.ID_Sede = jovem.ID_Sede', 'left');
+		$this->db->order_by('Nome','ASC');
 		$this->db->where('jovem.FlgExcluido', '0');
 
 
@@ -57,7 +58,24 @@ class Jovem_model extends CI_Model {
 
 		$this->db->select('Nome as Nome_Jovem, ID_Jovem');
 		$this->db->from(self::TABELA);
+		$this->db->where('jovem.FlgExcluido', '0');
+		$this->db->order_by('Nome','ASC');
 		$query = $this->db->get();
+
+		return $query->result();
+
+		//$query = $this->db->get(self::TABELA);
+		//return $query->result();
+	}
+
+	function listarUnicoJovemID($id){
+
+
+		$this->db->select('*');
+		$this->db->from(self::TABELA);
+		$this->db->where('ID_Jovem', $id);
+		$query = $this->db->get();
+
 		return $query->result();
 
 		//$query = $this->db->get(self::TABELA);

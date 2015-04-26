@@ -31,6 +31,7 @@ class Ministerio_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from(self::TABELA);
 		$this->db->where('ministerio.FlgExcluido', '0');
+		$this->db->order_by('Nome','ASC');
 		$query = $this->db->get();
 		return $query->result();
 	}
