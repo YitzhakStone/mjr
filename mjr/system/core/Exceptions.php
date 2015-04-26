@@ -103,8 +103,8 @@ class CI_Exceptions {
 	 */
 	function show_404($page = '', $log_error = TRUE)
 	{
-		$heading = "404 Page Not Found";
-		$message = "The page you requested was not found.";
+		$heading = "404 Página não encontrada :'(";
+		$message = "A página solicitada não foi localizada, Verifique o endereço digitado.";
 
 		// By default we log this, but allow a dev to skip it
 		if ($log_error)

@@ -1,7 +1,9 @@
 			<!-- cdn for modernizr, if you haven't included it already -->
-<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+<!-- <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script> -->
 <!-- polyfiller file to detect and load polyfills -->
-<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+<!-- <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script> -->
+<script type="text/javascript" src="<?php echo base_url("utils/js/modernizr-custom.js") ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("utils/js/polyfiller.js") ?>"></script>
 <script>
   webshims.setOptions('waitReady', false);
   webshims.setOptions('forms-ext', {types: 'date'});

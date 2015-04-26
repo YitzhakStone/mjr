@@ -22,6 +22,7 @@ class Ministerio_model extends CI_Model {
 		$this->db->select('ministerio.*,jovem.Nome as Jovem_Nome,jovem.Telefone,jovem.Celular,jovem.Email');
 		$this->db->from(self::TABELA); 
 		$this->db->join('jovem', 'ministerio.ID_Lider = jovem.ID_Jovem');
+		$this->db->where('ministerio.FlgExcluido', '0');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -29,6 +30,7 @@ class Ministerio_model extends CI_Model {
 	function listarMinisteriosSimples(){
 		$this->db->select('*');
 		$this->db->from(self::TABELA);
+		$this->db->where('ministerio.FlgExcluido', '0');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -50,8 +52,12 @@ class Ministerio_model extends CI_Model {
 	//delete
 	function excluirMinisterio(Ministerio_model $ministerio){
 		if(!empty($ministerio->idMinisterio)){
-			$excluir = $this->db->delete(self::TABELA, array('ID_Minist' => $ministerio->idMinisterio));
-			if($excluir)
+			$data = array(
+					'FlgExcluido' => 1
+			);
+			$this->db->where('ID_Minist',$ministerio->idMinisterio);
+			//$excluir = $this->db->delete(self::TABELA, array('ID_Minist' => $ministerio->idMinisterio));
+			if($this->db->update(self::TABELA, $data))
 				return true;
 			else 
 			return false;

@@ -56,8 +56,12 @@ class Jovem extends CI_Controller {
 	}
 	
 
-	//Cadastra um novo Jovem
-	//TESTE OK
+		/**
+	 * Cadastra um novo Jovem
+	 *
+	 * @param	não possui
+	 * @return	redireciona para  a propria página
+	 */
 	function cadastrarJovem(){
 
 		$Tnomejovem  = mysql_real_escape_string($_POST["nomejovem"]);
@@ -127,7 +131,7 @@ class Jovem extends CI_Controller {
 
 		$novoJovem = new jovem_model($idjovem,$Tnomejovem,$datnascjovem,
 			$nomepai,$nomemae,$enderecojovem,$telefonejovem, 
-			$celuluarjovem, $emailjovem,$rgjovem,$cpfjovem,
+			$celuluarjovem,$emailjovem,$rgjovem,$cpfjovem,
 			$obsjovem,$idsede);
 
 		$alterar = $this->jovem_model->alterarJovem($novoJovem);

@@ -25,13 +25,15 @@ class Sede_model extends CI_Model {
 		$this->db->select('sede.*,jovem.Nome as Jovem_Nome,jovem.Telefone,jovem.Celular,jovem.Email');
 		$this->db->from(self::TABELA); 
 		$this->db->join('jovem', 'sede.ID_Lider = jovem.ID_Jovem');
+		$this->db->where('sede.FlgExcluido', '0');
 		$query = $this->db->get();
 		return $query->result();
 	}
 
 	function listarSedesID(){
 		$this->db->select('ID_Sede,Nome as Nome_Sede');
-		$this->db->from(self::TABELA); 
+		$this->db->from(self::TABELA);
+		$this->db->where('sede.FlgExcluido', '0');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -41,8 +43,13 @@ class Sede_model extends CI_Model {
 	//delete
 	function excluirSede(Sede_model $sede){
 		if(!empty($sede->idSede)){
-			$excluir = $this->db->delete(self::TABELA, array('ID_Sede' => $sede->idSede));
-			if($excluir)
+
+			$data = array(
+					'FlgExcluido' => 1
+			);
+			$this->db->where('ID_Sede',$sede->idSede);
+			//$excluir = $this->db->delete(self::TABELA, array('ID_Sede' => $sede->idSede));
+			if($this->db->update(self::TABELA, $data))
 				return true;
 			else 
 			return false;

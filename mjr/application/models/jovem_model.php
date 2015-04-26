@@ -99,7 +99,7 @@ class Jovem_model extends CI_Model {
 					'Telefone' => $jovem->telefonejovem,
 					'Celular'=>$jovem->celuluarjovem,
 					'Email'=>$jovem->emailjovem,
-					'RG'=>$jovem->emailjovem,
+					'RG'=>$jovem->rgjovem,
 					'CPF'=>$jovem->cpfjovem,
 					'Obs'=>$jovem->obsjovem,
 					'ID_Sede'=>$jovem->idsede
@@ -128,7 +128,7 @@ class Jovem_model extends CI_Model {
 					'Telefone' => $jovem->telefonejovem,
 					'Celular'=>$jovem->celuluarjovem,
 					'Email'=>$jovem->emailjovem,
-					'RG'=>$jovem->emailjovem,
+					'RG'=>$jovem->rgjovem,
 					'CPF'=>$jovem->cpfjovem,
 					'Obs'=>$jovem->obsjovem,
 					'ID_Sede'=>$jovem->idsede

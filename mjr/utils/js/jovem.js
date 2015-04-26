@@ -15,7 +15,7 @@ $(document).ready(function() {
 	modalAlterarJovem();
 	modalCadastrarEmMinisterio();
 
-	
+
 	tableEvento = $('#tblJovem').DataTable({
 		//botões para impressão e exportação
 		dom: 'T<"clear">lfrtip',
@@ -182,8 +182,7 @@ function modalCadastrarEmMinisterio(){
 	$("#tblJovem tbody").on("click", ".btn-vincular", function () {
 		var data = tableEvento.row( $(this).parents('tr') ).data();
 		$("#ID_JovemMinisterio").val(data["ID_Jovem"]);
-		alert(data["ID_Jovem"]);
-		
+			
 	 });
 }
 
@@ -195,7 +194,10 @@ function modalAlterarJovem(){
 		$(".spanIdEvento").val(data["ID_Jovem"]);
 		$("#u_idsede option[title='"+nomeCategoria+"']").attr("selected","selected");
 		$("#iptnomejovem").val(data["Nome"]);
-		$("#u_datnascjovem").val(data["DatNasc"]);
+		var datArr = data["DatNasc"].split('/');
+ 		var datNasc = datArr[2] + '-' + datArr[1] + '-' + datArr[0];
+
+		$("#u_datnascjovem").val(datNasc);
 		$("#u_nomepai").val(data["NomePai"]);
 		$("#u_nomemae").val(data["NomeMae"]);
 		$("#u_enderecojovem").val(data["Endereco"]);
