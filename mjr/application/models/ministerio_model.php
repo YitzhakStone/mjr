@@ -2,7 +2,7 @@
 class Ministerio_model extends CI_Model {
 
 	const TABELA = 'ministerio';
-	const TABELAV = 'jovemministerio';
+	const TABELAVINCULO = 'jovemministerio';
 					
 	
 	var $idMinisterio;
@@ -104,7 +104,7 @@ class Ministerio_model extends CI_Model {
 
 	function removerdoMinisterio($idministerio,$idjovem){
 		if(!empty($idministerio) && !empty($idjovem)){
-			$excluir = $this->db->delete(self::TABELAV, array('ID_Minist' => $idministerio,'ID_Jovem' => $idjovem));
+			$excluir = $this->db->delete(self::TABELAVINCULO, array('ID_Minist' => $idministerio,'ID_Jovem' => $idjovem));
 			if($excluir)
 				return true;
 			else
@@ -112,6 +112,51 @@ class Ministerio_model extends CI_Model {
 
 		}
 		else{
+			return false;
+		}
+
+	}
+
+	function verificaSeCadastrado($idjovem,$idMinisterio){
+		$this->db->select('*');
+		$this->db->from(self::TABELAVINCULO);
+		$this->db->where('ID_Minist', $idMinisterio);
+		$this->db->where('ID_Jovem', $idjovem);
+		$query = $this->db->get();
+		if($query->num_rows() > 0){
+				return false;
+			}else{
+				return true;
+			}
+	}
+
+
+	function CadastrarNoMinisterio($idjovem,$idMinisterio){
+		
+
+		if(!empty($idjovem) && !empty($idMinisterio)){
+			
+			if ($this->verificaSeCadastrado($idjovem,$idMinisterio)) {
+				$data = array(
+					'ID_Minist' => $idMinisterio,
+					'ID_Jovem' => $idjovem
+				);
+
+				$inserir = $this -> db -> insert(self::TABELAVINCULO, $data);
+
+				if ($inserir) {
+					return true;
+				}
+				else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+
+			
+
+		}else{
 			return false;
 		}
 

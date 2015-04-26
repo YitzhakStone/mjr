@@ -106,7 +106,6 @@ class Jovem_model extends CI_Model {
 			);
 
 			$this->db->where('ID_Jovem',$jovem->idjovem);
-			
 			if($this->db->update(self::TABELA, $data))
 				return true;
 			else

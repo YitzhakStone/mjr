@@ -13,6 +13,9 @@ $(document).ready(function() {
 
 	modalExcluirJovem();
 	modalAlterarJovem();
+	modalCadastrarEmMinisterio();
+
+	
 	tableEvento = $('#tblJovem').DataTable({
 		//botões para impressão e exportação
 		dom: 'T<"clear">lfrtip',
@@ -142,7 +145,7 @@ $(document).ready(function() {
     	 {
             "targets":9,
             "data": null,
-            "defaultContent": "<a href='#alterarJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-sm btn-alterar' title='Editar Jovem'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-sm btn-excluir 'title='Excluir Jovem'><i class='glyphicon glyphicon-trash'></i></a> <a href='#cadastrarMinisterio' data-toggle='modal' id='modal-30777' role='button' class='btn btn-info btn-sm btn-comprar' title='Cadastrar em Ministério'><i class='glyphicon glyphicon-plus'></i></a>"
+            "defaultContent": "<a href='#alterarJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-sm btn-alterar' title='Editar Jovem'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-sm btn-excluir 'title='Excluir Jovem'><i class='glyphicon glyphicon-trash'></i></a> <a href='#cadastrarMinisterio' data-toggle='modal' id='modal-30777' role='button' class='btn btn-info btn-sm btn-vincular' title='Cadastrar em Ministério'><i class='glyphicon glyphicon-plus'></i></a>"
         }
         ],
     	"columns" : [{"data" : "ID_Jovem"}, {"data" : "Nome"}, {"data" : "Endereco"}, {"data" : "Telefone"}, {"data" : "Celular"} , {"data" : "Email"} , {"data" : "DatNasc"} ,  {"data" : "NomeMae"}, {"data" : "NomePai"}]
@@ -164,13 +167,22 @@ $(document).ready(function() {
     
 });
 
-//excluir jovem
+//excluir jovem on click
 function modalExcluirJovem(){
 	$("#tblJovem tbody").on("click", ".btn-excluir", function () {
 		var data = tableEvento.row( $(this).parents('tr') ).data();
 		$(".spanNomeEvento").html(data["Nome"]);
 		$(".spanIdEvento").val(data["ID_Jovem"]);
 
+		
+	 });
+}
+
+function modalCadastrarEmMinisterio(){
+	$("#tblJovem tbody").on("click", ".btn-vincular", function () {
+		var data = tableEvento.row( $(this).parents('tr') ).data();
+		$("#ID_JovemMinisterio").val(data["ID_Jovem"]);
+		alert(data["ID_Jovem"]);
 		
 	 });
 }
@@ -197,7 +209,9 @@ function modalAlterarJovem(){
 
 	 });
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
+//Scripts desncessários  - Remover depois
 function MascaraMoeda(objTextBox, SeparadorMilesimo, SeparadorDecimal, e){  
     var sep = 0;  
     var key = '';  

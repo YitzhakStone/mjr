@@ -245,7 +245,8 @@
 
 
 		<div class="modal fade" id="cadastrarMinisterio" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<form method="post" action="">
+			<form method="post" action="jovem/InserirEmMinisterio">
+				<input type="hidden" name="ID_JovemMinisterio" id="ID_JovemMinisterio" />
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
