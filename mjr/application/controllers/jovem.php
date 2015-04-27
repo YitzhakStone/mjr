@@ -75,7 +75,8 @@ class Jovem extends CI_Controller {
 		$celuluarjovem  = mysql_real_escape_string($_POST['celuluarjovem']);
 		$emailjovem  = mysql_real_escape_string($_POST['emailjovem']);
 		$rgjovem  = mysql_real_escape_string($_POST['rgjovem']);
-		$cpfjovem = mysql_real_escape_string($_POST['cpfjovem']);
+		$cpfjovem = "";
+		//$cpfjovem = mysql_real_escape_string($_POST['cpfjovem']);
 		$obsjovem  = mysql_real_escape_string($_POST['obsjovem']);
 		$idsede = mysql_real_escape_string($_POST['idsede']);
 
@@ -122,7 +123,8 @@ class Jovem extends CI_Controller {
 		$celuluarjovem  = mysql_real_escape_string($_POST['u_celuluarjovem']);
 		$emailjovem  = mysql_real_escape_string($_POST['u_emailjovem']);
 		$rgjovem  = mysql_real_escape_string($_POST['u_rgjovem']);
-		$cpfjovem = mysql_real_escape_string($_POST['u_cpfjovem']);
+		//$cpfjovem = mysql_real_escape_string($_POST['u_cpfjovem']);
+		$cpfjovem = "";
 		$obsjovem  = mysql_real_escape_string($_POST['u_obsjovem']);
 		$idsede = mysql_real_escape_string($_POST['u_idsede']);
 
@@ -189,5 +191,4 @@ class Jovem extends CI_Controller {
 	
 	
 }
-
-
+?>
