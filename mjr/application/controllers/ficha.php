@@ -6,6 +6,11 @@ class Ficha extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
+		if ($this -> session -> userdata('logged_in')) {
+			$this -> sessaoUsuario = $this -> session -> userdata('logged_in');
+		} else {
+			redirect('login');
+		}
 
 	}
 
@@ -27,7 +32,14 @@ class Ficha extends CI_Controller {
 	 */
 	function imprimir($id) {
 		//$this -> load -> view('ficha');
+		if (!$id) {
+			redirect('ficha'); 
+		}
+
 		$dados = $this->unico_jovem($id);
+		if (!$dados[0]) {
+			redirect('ficha'); 
+		}
 		echo" 
 
 <!doctype html>
