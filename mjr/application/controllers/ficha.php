@@ -45,7 +45,7 @@ class Ficha extends CI_Controller {
 <!doctype html>
 <html>
 <head>
-	<title>Ficha de Cadastro Jovem - MJRBH</title>
+	<title>Ficha de Cadastro  do Jovem - MJRBH</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 </head>
 <body>
