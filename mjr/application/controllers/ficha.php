@@ -54,7 +54,7 @@ class Ficha extends CI_Controller {
 <p><strong>Nome:</strong> " . $dados[0]->Nome  . " </p>
 
 
-<p><strong>Data de Nascimento: </strong> " . $dados[0]->DatNasc  . " </p>
+<p><strong>Data de Nascimento: </strong> " .  date("d/m/Y", strtotime($dados[0]->DatNasc))  . " </p>
 
 
 <p><strong>Nome do Pai:</strong> ". $dados[0]->NomePai ."</p> 
@@ -87,6 +87,8 @@ class Ficha extends CI_Controller {
 <p><strong>Observa&ccedil;&otilde;es:</strong> " . $dados[0]->Obs . "</p>
 
 <p>&nbsp;</p>
+
+<input type='button' name='imprimir' value='Imprimir' onclick='window.print();''>
 </body>
 </html>";
 

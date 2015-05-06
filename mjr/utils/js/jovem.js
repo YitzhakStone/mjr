@@ -14,6 +14,7 @@ $(document).ready(function() {
 	modalExcluirJovem();
 	modalAlterarJovem();
 	modalCadastrarEmMinisterio();
+	exibirficha();
 
 
 	tableEvento = $('#tblJovem').DataTable({
@@ -145,7 +146,7 @@ $(document).ready(function() {
     	 {
             "targets":9,
             "data": null,
-            "defaultContent": "<a href='#alterarJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-sm btn-alterar' title='Editar Jovem'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-sm btn-excluir 'title='Excluir Jovem'><i class='glyphicon glyphicon-trash'></i></a> <a href='#cadastrarMinisterio' data-toggle='modal' id='modal-30777' role='button' class='btn btn-info btn-sm btn-vincular' title='Cadastrar em Ministério'><i class='glyphicon glyphicon-plus'></i></a>"
+            "defaultContent": "<a href='#alterarJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-success btn-sm btn-alterar' title='Editar Jovem'><i class='glyphicon glyphicon-refresh'></i></a> <a href='#excluirJovem' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-sm btn-excluir 'title='Excluir Jovem'><i class='glyphicon glyphicon-trash'></i></a> <a href='#cadastrarMinisterio' data-toggle='modal' id='modal-30777' role='button' class='btn btn-info btn-sm btn-vincular' title='Cadastrar em Ministério'><i class='glyphicon glyphicon-plus'></i></a> <a href='' data-toggle='modal' id='modal-30777' role='button' class='btn btn-warning btn-sm btn-ficha' title='Gerar Ficha do Jovem'><i class='glyphicon glyphicon-print'></i></a>"
         }
         ],
     	"columns" : [{"data" : "ID_Jovem"}, {"data" : "Nome"}, {"data" : "Endereco"}, {"data" : "Telefone"}, {"data" : "Celular"} , {"data" : "Email"} , {"data" : "DatNasc"} ,  {"data" : "NomeMae"}, {"data" : "NomePai"}]
@@ -177,6 +178,17 @@ function modalExcluirJovem(){
 		
 	 });
 }
+
+function exibirficha(){
+	$("#tblJovem tbody").on("click", ".btn-ficha", function () {
+		var data = tableEvento.row( $(this).parents('tr') ).data();
+		window.open('ficha/imprimir/'+ data["ID_Jovem"], 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=800');
+
+		
+	 });
+}
+
+
 
 function modalCadastrarEmMinisterio(){
 	$("#tblJovem tbody").on("click", ".btn-vincular", function () {
