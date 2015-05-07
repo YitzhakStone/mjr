@@ -2,13 +2,14 @@ var table = "";
 
 $(document).ready(function() {
 
-	$("#telefonejovem").mask("(99)9999-9999");
-	$("#celuluarjovem").mask("(99)9999-9999");
+	
+	$("#telefonejovem").mask("(99) 9999-9999");
+	$("#celuluarjovem").mask("(99) 9999-9999");
 	//$("#cpfjovem").mask("999.999.999-99");
 	//$("#u_cpfjovem").mask("999.999.999-99");
-	$("#u_telefonejovem").mask("(99)9999-9999");
-	$("#u_celuluarjovem").mask("(99)9999-9999");
-
+	$("#u_telefonejovem").mask("(99) 9999-9999");
+	$("#u_celuluarjovem").mask("(99) 9999-9999");
+	
 
 
 	modalExcluirJovem();

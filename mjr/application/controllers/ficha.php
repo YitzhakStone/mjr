@@ -47,6 +47,13 @@ class Ficha extends CI_Controller {
 <head>
 	<title>Ficha de Cadastro  do Jovem - MJRBH</title>
 	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	 <style>
+                @media print { 
+                    #noprint { display:none; } 
+                    body { background: #fff; }
+                }
+     </style>
+
 </head>
 <body>
 <h1><span style='font-size:22px'>Ficha de Cadastro Jovem - MJRBH</span></h1>
@@ -88,9 +95,13 @@ class Ficha extends CI_Controller {
 
 <p>&nbsp;</p>
 
-<input type='button' name='imprimir' value='Imprimir' onclick='window.print();''>
+ <div id='noprint'>
+<input type='button' name='imprimir' id='imprimir' value='Imprimir' onclick='window.print();''>
+</div>
+
 </body>
-</html>";
+</html>"
+;
 
 	}
 }
