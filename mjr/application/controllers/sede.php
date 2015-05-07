@@ -61,7 +61,7 @@ class Sede extends CI_Controller {
 		}else{
 			echo utf8_decode("<script>
 									alert('Todos os campos são obrigatórios');
-									location.href='".base_url('ingressos')."';	
+									location.href='".base_url('sede')."';	
 							</script>");
 			
 		}
@@ -102,7 +102,7 @@ class Sede extends CI_Controller {
 		}else{
 			echo utf8_decode("<script>
 									alert('Todos os campos são obrigatórios');
-									location.href='".base_url('eventos')."';	
+									location.href='".base_url('sede')."';	
 							</script>");
 		}
 	}

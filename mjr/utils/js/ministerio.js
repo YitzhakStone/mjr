@@ -94,6 +94,52 @@ $(document).ready(function() {
 function preencherTableJovensMinist(idMinist){
 	//var idMinist = 1;
 	tableLideres = $('#tblJovensMinisterio').DataTable({
+		//exportação de dados
+		dom: 'T<"clear">lfrtip',
+		tableTools: 
+		{
+		
+		
+			"sSwfPath": "./utils/swf/copy_csv_xls_pdf.swf",
+			"aButtons": [
+
+			
+                {
+					"sExtends": "copy",
+					"sButtonText": "Copiar",
+					"mColumns": [1,2,3,4,5,6],
+					"oSelectorOpts":{
+						page: 'current'
+					},
+                } ,
+
+               	//grupo impressão
+                {
+					"sExtends": "print",
+					"sButtonText": "Imprimir",
+					"sInfo": "Pagina para impressão Gerada! Aperte Esc para voltar",
+					"mColumns": [1,2,3,4,5,6],
+					"oSelectorOpts":{
+									page: 'current'
+							        },						
+                } ,
+
+                //grupo PDF
+
+                {
+					"sExtends": "pdf",
+					"sButtonText": "Exportar PDF",								
+					"mColumns": [1,2,3,4,5,6],								
+					"oSelectorOpts":{								
+					page: 'current'						                		
+					},		            							
+					"sPdfOrientation": "landscape"										
+				},            			
+												
+            ]
+        },
+		//fim exportação de dados
+		"aaSorting": [[1, "asc"]],
     	"oLanguage": {
 	        "sEmptyTable": "Nenhum registro encontrado.",
 	        "sInfo": "_TOTAL_ registros",
@@ -121,14 +167,14 @@ function preencherTableJovensMinist(idMinist){
                 "searchable": false
          },
     	 {
-            "targets": 6,
+            "targets": 7,
             "data": null,
             "defaultContent": "<a href='#excluirVinculo' title='Remover do Ministério' data-toggle='modal' id='modal-30777' role='button' class='btn btn-danger btn-excluir'><i class='glyphicon glyphicon-remove'></i></a>"
             
         }
         ],
     	//"columns" : [{"data" : "Nome"}, {"data" : "Jovem_Nome"}, {"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
-    	"columns" : [ {"data" : "ID_Minist"}, {"data" : "Nome"}, {"data" : "Jovem_Nome"},{"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
+    	"columns" : [ {"data" : "ID_Minist"}, {"data" : "Nome"}, {"data" : "Jovem_Nome"},{"data" : "RG"},{"data" : "Telefone"}, {"data" : "Celular"}, {"data" : "Email"}]
     });
 }
 

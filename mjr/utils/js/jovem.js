@@ -2,13 +2,26 @@ var table = "";
 
 $(document).ready(function() {
 
+	//mascara para telefone 
+	jQuery('input[type=tel]').mask("(99)9999-9999?9").ready(function(event) {
+        var target, phone, element;
+        target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+        phone = target.value.replace(/\D/g, '');
+        element = $(target);
+        element.unmask();
+        if(phone.length > 10) {
+            element.mask("(99)99999-999?9");
+        } else {
+            element.mask("(99)9999-9999?9");
+        }
+    });
 	
-	$("#telefonejovem").mask("(99) 9999-9999");
-	$("#celuluarjovem").mask("(99) 9999-9999");
+	$("#telefonejovem").mask("(99)9999-9999");
+	//$("#celuluarjovem").mask("(99)9999-9999");
 	//$("#cpfjovem").mask("999.999.999-99");
 	//$("#u_cpfjovem").mask("999.999.999-99");
-	$("#u_telefonejovem").mask("(99) 9999-9999");
-	$("#u_celuluarjovem").mask("(99) 9999-9999");
+	$("#u_telefonejovem").mask("(99)9999-9999");
+	//$("#u_celuluarjovem").mask("(99)9999-9999");
 	
 
 
@@ -183,7 +196,7 @@ function modalExcluirJovem(){
 function exibirficha(){
 	$("#tblJovem tbody").on("click", ".btn-ficha", function () {
 		var data = tableEvento.row( $(this).parents('tr') ).data();
-		window.open('ficha/imprimir/'+ data["ID_Jovem"], 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=800');
+		window.open('ficha/imprimir/'+ data["ID_Jovem"], 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=550, HEIGHT=650');
 
 		
 	 });

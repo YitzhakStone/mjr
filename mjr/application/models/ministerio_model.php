@@ -38,7 +38,7 @@ class Ministerio_model extends CI_Model {
 
 
 	function listarJovensMinisterios($idMinist){
-		$this->db->select('ministerio.*,jovem.ID_Jovem, jovem.Nome as Jovem_Nome,jovem.Telefone,jovem.Celular,jovem.Email');
+		$this->db->select('ministerio.*,jovem.ID_Jovem, jovem.Nome as Jovem_Nome,jovem.RG,jovem.Telefone,jovem.Celular,jovem.Email');
 		//$this->db->select('ministerio.ID_Minist, ministerio.nome as Minist_Nome, jovem.Nome as Jovem_Nome');
 		$this->db->from(self::TABELA); 
 		$this->db->join('jovemministerio', 'ministerio.ID_Minist = jovemministerio.ID_Minist');
@@ -46,6 +46,15 @@ class Ministerio_model extends CI_Model {
 		//$this->db->where('ID_Minist', $ministerio->idMinisterio);
 		$this->db->where('ministerio.ID_Minist', $idMinist);
 
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function listarMinisteriosDoJovem($idjovem){
+		$this->db->select('ministerio.nome, jovemministerio.ID_Jovem, jovemministerio.ID_Minist');
+		$this->db->from(self::TABELAVINCULO);
+		$this->db->join('ministerio','ministerio.ID_Minist = jovemministerio.ID_Minist');
+		$this->db->where('jovemministerio.ID_Jovem',$idjovem);
 		$query = $this->db->get();
 		return $query->result();
 	}

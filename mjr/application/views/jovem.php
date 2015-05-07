@@ -77,7 +77,7 @@
 									</div>
 									<div class="form-group">
 										<label for="celuluarjovem">Celular</label>
-										<input class="form-control" id="celuluarjovem" name="celuluarjovem" type="text" maxlength="15"/>
+										<input class="form-control" id="celuluarjovem" name="celuluarjovem" type="tel" maxlength="15"/>
 									</div>
 									<div class="form-group">
 										<label for="emailjovem">Email</label>
@@ -215,7 +215,7 @@
 									</div>
 									<div class="form-group">
 										<label for="celuluarjovem">Celular</label>
-										<input class="form-control" id="u_celuluarjovem" name="u_celuluarjovem" type="text" maxlength="15"/>
+										<input class="form-control" id="u_celuluarjovem" name="u_celuluarjovem" type="tel" maxlength="15"/>
 									</div>
 									<div class="form-group">
 										<label for="emailjovem">Email</label>

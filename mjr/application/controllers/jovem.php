@@ -182,13 +182,11 @@ class Jovem extends CI_Controller {
 		if($vincular){
 			redirect('jovem');
 		}else{
-			echo "<script> alert('Erro: Verifique se o jovem não está cadastardo no ministerio!')</scritp>";
-			redirect('ministerio');
+			//echo "<script> alert('Erro: Verifique se o jovem não está cadastardo no ministerio!')</scritp>";
+			redirect('jovem');
 		}
 
 	}
-
-	
 	
 }
 ?>

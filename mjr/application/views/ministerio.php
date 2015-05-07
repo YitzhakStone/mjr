@@ -179,6 +179,7 @@
 									<th>ID_Ministério</th>
 									<th>Ministério</th>
 									<th>Jovem</th>
+									<th>Identidade</th>
 									<th>Telefone</th>
 									<th>Celular</th>
 									<th>Email</th>

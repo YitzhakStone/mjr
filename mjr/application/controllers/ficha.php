@@ -25,6 +25,14 @@ class Ficha extends CI_Controller {
 		return $jovem;
 
 	}
+
+	function listaMinisterioJovem($id)
+	{
+		$this->load->model('ministerio_model');
+		$participa = $this->ministerio_model->listarMinisteriosDoJovem($id);
+		return $participa;
+
+	}
 	/* 
 	 * Listar Categorias
 	 * 
@@ -37,10 +45,22 @@ class Ficha extends CI_Controller {
 		}
 
 		$dados = $this->unico_jovem($id);
+		$participa = $this-> listaMinisterioJovem($id);
+		$texto = "";
+
+		foreach ($participa as $row) {
+			$ministerios[] = $row->nome;
+		};
+		if ($participa) {
+			$texto = join(", ", $ministerios);
+		}
+		
 		if (!$dados[0]) {
 			redirect('ficha'); 
 		}
 		echo" 
+
+
 
 <!doctype html>
 <html>
@@ -50,6 +70,8 @@ class Ficha extends CI_Controller {
 	 <style>
                 @media print { 
                     #noprint { display:none; } 
+                    header { display: none; }
+  }					footer { display: none; }
                     body { background: #fff; }
                 }
      </style>
@@ -85,10 +107,10 @@ class Ficha extends CI_Controller {
 <p><strong>RG:</strong> " . $dados[0]->RG . "</p>
 
 
-<p><strong>Igreja:</strong></p> 
+<p><strong>Igreja:</strong> ". $dados[0]->Nome_Sede ."</p> 
 
 
-<p><strong>Minist&eacute;rio:</strong></p>
+<p><strong>Minist&eacute;rios:</strong> ". $texto . " </p>
 
 
 <p><strong>Observa&ccedil;&otilde;es:</strong> " . $dados[0]->Obs . "</p>

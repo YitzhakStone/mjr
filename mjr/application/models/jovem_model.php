@@ -71,8 +71,9 @@ class Jovem_model extends CI_Model {
 	function listarUnicoJovemID($id){
 
 
-		$this->db->select('*');
+		$this->db->select('jovem.*,sede.Nome as Nome_Sede ,sede.ID_Sede');
 		$this->db->from(self::TABELA);
+		$this->db->join('sede', 'sede.ID_Sede = jovem.ID_Sede', 'left');
 		$this->db->where('ID_Jovem', $id);
 		$query = $this->db->get();
 
