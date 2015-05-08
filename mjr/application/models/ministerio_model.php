@@ -45,6 +45,7 @@ class Ministerio_model extends CI_Model {
 		$this->db->join('jovem', 'jovemministerio.ID_Jovem = jovem.ID_Jovem');
 		//$this->db->where('ID_Minist', $ministerio->idMinisterio);
 		$this->db->where('ministerio.ID_Minist', $idMinist);
+		$this->db->where('jovem.FlgExcluido','0');
 
 		$query = $this->db->get();
 		return $query->result();
